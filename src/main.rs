@@ -29,9 +29,11 @@ fn main() -> anyhow::Result<()> {
     let data = marinade_state.data();
     let marinade_state_deserialized = State::try_deserialize(&mut data.as_ref())?;
 
+    let marinade_state_2: State = program.account(state_account_address)?;
+
     println!(
-        "Marinade state account lamports: {}: {:?}",
-        marinade_state.lamports, marinade_state_deserialized.msol_mint
+        "Marinade state account lamports: {}: msol mint: {} and msol mint 2: {}",
+        marinade_state.lamports, marinade_state_deserialized.msol_mint, marinade_state_2.msol_mint
     );
 
     Ok(())
