@@ -1,0 +1,10 @@
+[package]
+name = "test-anchor-gen"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anchor-client = "0.31.0"
+anyhow = "1.0.100"
+marinade-cpi = { git = "https://github.com/saber-hq/anchor-gen.git" }
+solana-commitment-config = "2.2.0"
