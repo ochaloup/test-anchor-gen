@@ -1,0 +1,22 @@
+{
+  "name": "anchor-0.27",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "cli": "ts-node src/main.ts",
+    "build": "tsc --build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "@types/node": "^24.5.2",
+    "typescript": "^5.1.6",
+    "@coral-xyz/anchor": "^0.27.0",
+    "@solana/web3.js": "^1.98.4",
+    "ts-node": "^10.9.1"
+  }
+}
