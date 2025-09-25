@@ -1,8 +1,9 @@
-import { Connection, Keypair, PublicKey } from '@solana/web3.js'
-import { IDL as MarinadeIDL, MarinadeFinance } from './types/marinade'
-import { AnchorProvider, IdlAccounts, Program, Wallet } from '@coral-xyz/anchor'
 
-const MARINADE_LIQUID_STAKE_PROGRAM_ID = new PublicKey("MarBmsSgKXdrN1egZf5sqe1TMai9K1rChYNDJgjq7aD")
+import { Connection, Keypair, PublicKey } from '@solana/web3.js'
+import { AnchorProvider, IdlAccounts, Program, Wallet } from '@coral-xyz/anchor'
+import MarinadeIDL from "./idl/marinade.json"
+import type { MarinadeFinance } from "./types/marinade";
+
 const MARINADE_LIQUID_STAKE_STATE = new PublicKey("8szGkuLTAux9XMgZ2vtY39jVSowEcpBfFfD8hXSEqdGC")
 
 export type MarinadeProgram = Program<MarinadeFinance>
@@ -17,10 +18,10 @@ async function main(): Promise<void> {
     wallet,
     AnchorProvider.defaultOptions(),
   )
-  const program = new Program<MarinadeFinance>(MarinadeIDL, MARINADE_LIQUID_STAKE_PROGRAM_ID, provider)
+  const program = new Program<MarinadeFinance>(MarinadeIDL, provider)
   const marinadeState = await program.account.state.fetch(MARINADE_LIQUID_STAKE_STATE)
 
-  console.log("Anchor 0.27 Marinade state:", marinadeState.msolMint.toBase58());
+  console.log("Anchor 0.31 Marinade state:", marinadeState.msolMint.toBase58());
 }
 
 main().catch((err) => {

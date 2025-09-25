@@ -1,5 +1,5 @@
 {
-  "name": "anchor-0.27",
+  "name": "anchor-0.31",
   "version": "1.0.0",
   "description": "",
   "main": "dist/src/index.js",
@@ -15,7 +15,7 @@
   "dependencies": {
     "@types/node": "^24.5.2",
     "typescript": "^5.1.6",
-    "@coral-xyz/anchor": "0.27.0",
+    "@coral-xyz/anchor": "0.31.1",
     "@solana/web3.js": "^1.98.4",
     "ts-node": "^10.9.1"
   }
