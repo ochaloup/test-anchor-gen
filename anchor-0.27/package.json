@@ -15,8 +15,19 @@
   "dependencies": {
     "@types/node": "^24.5.2",
     "typescript": "^5.1.6",
-    "@coral-xyz/anchor": "0.27.0",
+    "@coral-xyz/anchor": "0.29.0",
     "@solana/web3.js": "^1.98.4",
-    "ts-node": "^10.9.1"
+    "@marinade.finance/validator-bonds-sdk": "file:/home/chalda/marinade/validator-bonds/packages/validator-bonds-sdk/",
+    "ts-node": "^10.9.1",
+    "bs58":"^6.0.0",
+    "@marinade.finance/ts-common": "^4.0.0",
+    "@marinade.finance/web3js-1x": "^4.0.0",
+    "@marinade.finance/marinade-ts-sdk": "^5.0.15",
+    "@solana/spl-token": "^0.3.11",
+    "borsh": "~0.7.0",
+    "crypto-js": "^4.2.0",
+    "bn.js": "^5.2.2",
+    "jsbi": "^4.3.2",
+    "solana-spl-token-modern": "npm:@solana/spl-token@^0.3.11"
   }
 }
