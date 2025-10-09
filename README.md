@@ -4,4 +4,5 @@ See
 
 * https://github.com/ochaloup/anchor-idl-to-ts
 * https://github.com/saber-hq/anchor-gen
+* https://www.anchor-lang.com/docs/features/declare-program
 * https://blog.chalda.cz
