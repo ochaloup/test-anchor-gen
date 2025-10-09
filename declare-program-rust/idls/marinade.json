@@ -842,7 +842,7 @@
       ],
       "accounts": [
         {
-          "name": "common_active",
+          "name": "common",
           "accounts": [
             {
               "name": "state",
@@ -918,7 +918,7 @@
       ],
       "accounts": [
         {
-          "name": "common_deactivated",
+          "name": "common",
           "accounts": [
             {
               "name": "state",
