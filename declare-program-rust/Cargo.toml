@@ -1,0 +1,10 @@
+[package]
+name = "declare-program-rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anchor-client = "0.32.0"
+anchor-lang = "0.32.0"
+anyhow = "1.0.100"
+solana-commitment-config = "2.2.0"
