@@ -1,7 +1,7 @@
 use anchor_client::anchor_lang::declare_program;
 use anchor_client::solana_sdk::pubkey::Pubkey;
 use anchor_client::{Client, Cluster, solana_sdk::signature::Keypair};
-use anchor_lang::AccountDeserialize;
+use anchor_lang::{AccountDeserialize, AnchorDeserialize};
 use solana_client::rpc_client::RpcClient;
 use solana_client::rpc_config::CommitmentConfig as RpcCommitmentConfig;
 use solana_client::rpc_request::Address;
@@ -31,11 +31,15 @@ fn main() -> anyhow::Result<()> {
     );
     let state_account_address = Address::from_str_const(address_string);
     let account_data = solana_rpc_client.get_account_data(&state_account_address)?;
-    let marinade_state_direct = State::try_deserialize(&mut account_data.as_slice())?;
+
+    let mut sliced_data = &account_data.as_slice()[8..];
+    let marinade_state_deserialize = State::deserialize(&mut sliced_data)?;
+
+    let marinade_state_try_deserialize = State::try_deserialize(&mut account_data.as_slice())?;
 
     println!(
-        "Client loaded Marinade state {} account: msol mint: {}",
-        state_account_address, marinade_state_direct.msol_mint
+        "Client loaded Marinade state {}, msol mint: {}/{}",
+        state_account_address, marinade_state_deserialize.msol_mint, marinade_state_try_deserialize.msol_mint
     );
 
     Ok(())
